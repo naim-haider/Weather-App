@@ -50,7 +50,7 @@ export default function Home() {
           <SearchIcon />
         </button>
       </div>
-      {placeData && (
+      {placeData ? (
         <div className={styles.row}>
           <div className={styles.section1}>
             <div className={styles.section11}>
@@ -81,9 +81,11 @@ export default function Home() {
             <p className={styles.time}>{currentTime}</p>
           </div>
         </div>
+      ) : (
+        <>Place is not found</>
       )}
 
-      {placeData && (
+      {placeData ? (
         <div className={styles.section2}>
           <div className={styles.section21}>
             <p className={styles.head1}>Temperature</p>
@@ -120,6 +122,8 @@ export default function Home() {
             <p className={styles.head2}>{placeData?.wind.speed} km/hr</p>
           </div>
         </div>
+      ) : (
+        <>Place is not found</>
       )}
     </div>
   );
